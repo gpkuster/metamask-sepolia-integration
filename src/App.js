@@ -27,4 +27,16 @@ function App() {
   );
 }
 
+async function connectWallet() {
+
+  if (!window.ethereum) {
+    alert("Install MetaMask");
+    return;
+  }
+
+  await window.ethereum.request({
+    method: "eth_requestAccounts"
+  });
+}
+
 export default App;

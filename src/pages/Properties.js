@@ -6,10 +6,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// import required modules
+// Import required modules
 import { Pagination, Navigation } from "swiper/modules";
 import CountDown from "../components/functions/CountDown";
-// import framer motion
+// Import framer motion
 import { motion } from "framer-motion";
 import AnimationTitles from "../components/functions/AnimationTitles";
 

@@ -1,0 +1,376 @@
+{
+    "abi": [
+        {
+            "type": "constructor",
+            "inputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "distributeReturns",
+            "inputs": [],
+            "outputs": [],
+            "stateMutability": "payable"
+        },
+        {
+            "type": "function",
+            "name": "getContractBalance",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "invest",
+            "inputs": [],
+            "outputs": [],
+            "stateMutability": "payable"
+        },
+        {
+            "type": "function",
+            "name": "investments",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "investors",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "owner",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "totalInvested",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "event",
+            "name": "Invested",
+            "inputs": [
+                {
+                    "name": "investor",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "ReturnPaid",
+            "inputs": [
+                {
+                    "name": "investor",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        }
+    ],
+    "bytecode": {
+        "object": "0x6080604052348015600e575f5ffd5b50335f5f6101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610b588061005b5f395ff3fe60806040526004361061006f575f3560e01c80638da5cb5b1161004d5780638da5cb5b14610103578063951d48d71461012d57806396b9886214610137578063e8b5e51f146101735761006f565b80633feb5f2b146100735780635216aeec146100af5780636f9fb98a146100d9575b5f5ffd5b34801561007e575f5ffd5b506100996004803603810190610094919061069e565b61017d565b6040516100a69190610708565b60405180910390f35b3480156100ba575f5ffd5b506100c36101b8565b6040516100d09190610730565b60405180910390f35b3480156100e4575f5ffd5b506100ed6101be565b6040516100fa9190610730565b60405180910390f35b34801561010e575f5ffd5b506101176101c5565b6040516101249190610708565b60405180910390f35b6101356101e9565b005b348015610142575f5ffd5b5061015d60048036038101906101589190610773565b6104b0565b60405161016a9190610730565b60405180910390f35b61017b6104c5565b005b6003818154811061018c575f80fd5b905f5260205f20015f915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60015481565b5f47905090565b5f5f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b5f5f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610277576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161026e906107f8565b60405180910390fd5b5f34116102b9576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016102b090610860565b60405180910390fd5b5f600154116102fd576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016102f4906108c8565b60405180910390fd5b5f5f90505b6003805490508110156104ad575f60038281548110610324576103236108e6565b5b905f5260205f20015f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690505f60015460025f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f20543461039b9190610940565b6103a591906109ae565b90505f8273ffffffffffffffffffffffffffffffffffffffff16826040516103cc90610a0b565b5f6040518083038185875af1925050503d805f8114610406576040519150601f19603f3d011682016040523d82523d5f602084013e61040b565b606091505b505090508061044f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161044690610a69565b60405180910390fd5b8273ffffffffffffffffffffffffffffffffffffffff167f457c6b591692a5d800eec0646261f7533adf0572c2d64d8c798aefba82003112836040516104959190610730565b60405180910390a25050508080600101915050610302565b50565b6002602052805f5260405f205f915090505481565b5f3411610507576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016104fe90610ad1565b60405180910390fd5b5f60025f3373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f2054036105ac57600333908060018154018082558091505060019003905f5260205f20015f9091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b3460025f3373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8282546105f89190610aef565b925050819055503460015f8282546106109190610aef565b925050819055503373ffffffffffffffffffffffffffffffffffffffff167fc3f75dfc78f6efac88ad5abb5e606276b903647d97b2a62a1ef89840a658bbc33460405161065d9190610730565b60405180910390a2565b5f5ffd5b5f819050919050565b61067d8161066b565b8114610687575f5ffd5b50565b5f8135905061069881610674565b92915050565b5f602082840312156106b3576106b2610667565b5b5f6106c08482850161068a565b91505092915050565b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f6106f2826106c9565b9050919050565b610702816106e8565b82525050565b5f60208201905061071b5f8301846106f9565b92915050565b61072a8161066b565b82525050565b5f6020820190506107435f830184610721565b92915050565b610752816106e8565b811461075c575f5ffd5b50565b5f8135905061076d81610749565b92915050565b5f6020828403121561078857610787610667565b5b5f6107958482850161075f565b91505092915050565b5f82825260208201905092915050565b7f4e6f74206f776e657200000000000000000000000000000000000000000000005f82015250565b5f6107e260098361079e565b91506107ed826107ae565b602082019050919050565b5f6020820190508181035f83015261080f816107d6565b9050919050565b7f4e6f204554482073656e740000000000000000000000000000000000000000005f82015250565b5f61084a600b8361079e565b915061085582610816565b602082019050919050565b5f6020820190508181035f8301526108778161083e565b9050919050565b7f4e6f20696e766573746f727300000000000000000000000000000000000000005f82015250565b5f6108b2600c8361079e565b91506108bd8261087e565b602082019050919050565b5f6020820190508181035f8301526108df816108a6565b9050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f61094a8261066b565b91506109558361066b565b92508282026109638161066b565b9150828204841483151761097a57610979610913565b5b5092915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b5f6109b88261066b565b91506109c38361066b565b9250826109d3576109d2610981565b5b828204905092915050565b5f81905092915050565b50565b5f6109f65f836109de565b9150610a01826109e8565b5f82019050919050565b5f610a15826109eb565b9150819050919050565b7f5472616e73666572206661696c656400000000000000000000000000000000005f82015250565b5f610a53600f8361079e565b9150610a5e82610a1f565b602082019050919050565b5f6020820190508181035f830152610a8081610a47565b9050919050565b7f4d7573742073656e6420455448000000000000000000000000000000000000005f82015250565b5f610abb600d8361079e565b9150610ac682610a87565b602082019050919050565b5f6020820190508181035f830152610ae881610aaf565b9050919050565b5f610af98261066b565b9150610b048361066b565b9250828201905080821115610b1c57610b1b610913565b5b9291505056fea264697066735822122077e422652a35098546a27eb9019f28e01913db87f49d7f75aeefe1324045044664736f6c634300081e0033",
+        "sourceMap": "251:2374:19:-:0;;;1273:49;;;;;;;;;;1305:10;1297:5;;:18;;;;;;;;;;;;;;;;;;251:2374;;;;;;",
+        "linkReferences": {}
+    },
+    "deployedBytecode": {
+        "object": "0x60806040526004361061006f575f3560e01c80638da5cb5b1161004d5780638da5cb5b14610103578063951d48d71461012d57806396b9886214610137578063e8b5e51f146101735761006f565b80633feb5f2b146100735780635216aeec146100af5780636f9fb98a146100d9575b5f5ffd5b34801561007e575f5ffd5b506100996004803603810190610094919061069e565b61017d565b6040516100a69190610708565b60405180910390f35b3480156100ba575f5ffd5b506100c36101b8565b6040516100d09190610730565b60405180910390f35b3480156100e4575f5ffd5b506100ed6101be565b6040516100fa9190610730565b60405180910390f35b34801561010e575f5ffd5b506101176101c5565b6040516101249190610708565b60405180910390f35b6101356101e9565b005b348015610142575f5ffd5b5061015d60048036038101906101589190610773565b6104b0565b60405161016a9190610730565b60405180910390f35b61017b6104c5565b005b6003818154811061018c575f80fd5b905f5260205f20015f915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60015481565b5f47905090565b5f5f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b5f5f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610277576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161026e906107f8565b60405180910390fd5b5f34116102b9576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016102b090610860565b60405180910390fd5b5f600154116102fd576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016102f4906108c8565b60405180910390fd5b5f5f90505b6003805490508110156104ad575f60038281548110610324576103236108e6565b5b905f5260205f20015f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690505f60015460025f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f20543461039b9190610940565b6103a591906109ae565b90505f8273ffffffffffffffffffffffffffffffffffffffff16826040516103cc90610a0b565b5f6040518083038185875af1925050503d805f8114610406576040519150601f19603f3d011682016040523d82523d5f602084013e61040b565b606091505b505090508061044f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161044690610a69565b60405180910390fd5b8273ffffffffffffffffffffffffffffffffffffffff167f457c6b591692a5d800eec0646261f7533adf0572c2d64d8c798aefba82003112836040516104959190610730565b60405180910390a25050508080600101915050610302565b50565b6002602052805f5260405f205f915090505481565b5f3411610507576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016104fe90610ad1565b60405180910390fd5b5f60025f3373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f2054036105ac57600333908060018154018082558091505060019003905f5260205f20015f9091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b3460025f3373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8282546105f89190610aef565b925050819055503460015f8282546106109190610aef565b925050819055503373ffffffffffffffffffffffffffffffffffffffff167fc3f75dfc78f6efac88ad5abb5e606276b903647d97b2a62a1ef89840a658bbc33460405161065d9190610730565b60405180910390a2565b5f5ffd5b5f819050919050565b61067d8161066b565b8114610687575f5ffd5b50565b5f8135905061069881610674565b92915050565b5f602082840312156106b3576106b2610667565b5b5f6106c08482850161068a565b91505092915050565b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f6106f2826106c9565b9050919050565b610702816106e8565b82525050565b5f60208201905061071b5f8301846106f9565b92915050565b61072a8161066b565b82525050565b5f6020820190506107435f830184610721565b92915050565b610752816106e8565b811461075c575f5ffd5b50565b5f8135905061076d81610749565b92915050565b5f6020828403121561078857610787610667565b5b5f6107958482850161075f565b91505092915050565b5f82825260208201905092915050565b7f4e6f74206f776e657200000000000000000000000000000000000000000000005f82015250565b5f6107e260098361079e565b91506107ed826107ae565b602082019050919050565b5f6020820190508181035f83015261080f816107d6565b9050919050565b7f4e6f204554482073656e740000000000000000000000000000000000000000005f82015250565b5f61084a600b8361079e565b915061085582610816565b602082019050919050565b5f6020820190508181035f8301526108778161083e565b9050919050565b7f4e6f20696e766573746f727300000000000000000000000000000000000000005f82015250565b5f6108b2600c8361079e565b91506108bd8261087e565b602082019050919050565b5f6020820190508181035f8301526108df816108a6565b9050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f61094a8261066b565b91506109558361066b565b92508282026109638161066b565b9150828204841483151761097a57610979610913565b5b5092915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b5f6109b88261066b565b91506109c38361066b565b9250826109d3576109d2610981565b5b828204905092915050565b5f81905092915050565b50565b5f6109f65f836109de565b9150610a01826109e8565b5f82019050919050565b5f610a15826109eb565b9150819050919050565b7f5472616e73666572206661696c656400000000000000000000000000000000005f82015250565b5f610a53600f8361079e565b9150610a5e82610a1f565b602082019050919050565b5f6020820190508181035f830152610a8081610a47565b9050919050565b7f4d7573742073656e6420455448000000000000000000000000000000000000005f82015250565b5f610abb600d8361079e565b9150610ac682610a87565b602082019050919050565b5f6020820190508181035f830152610ae881610aaf565b9050919050565b5f610af98261066b565b9150610b048361066b565b9250828201905080821115610b1c57610b1b610913565b5b9291505056fea264697066735822122077e422652a35098546a27eb9019f28e01913db87f49d7f75aeefe1324045044664736f6c634300081e0033",
+        "sourceMap": "251:2374:19:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;597:26;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;403:28;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;2516:107;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;324:20;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1899:509;;;:::i;:::-;;501:46;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1460:316;;;:::i;:::-;;597:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;403:28::-;;;;:::o;2516:107::-;2569:7;2595:21;2588:28;;2516:107;:::o;324:20::-;;;;;;;;;;;;;:::o;1899:509::-;1178:5;;;;;;;;;;;1164:19;;:10;:19;;;1156:41;;;;;;;;;;;;:::i;:::-;;;;;;;;;1985:1:::1;1973:9;:13;1965:37;;;;;;;;;;;;:::i;:::-;;;;;;;;;2036:1;2020:13;;:17;2012:42;;;;;;;;;;;;:::i;:::-;;;;;;;;;2070:6;2079:1;2070:10;;2065:337;2086:9;:16;;;;2082:1;:20;2065:337;;;2123:16;2142:9;2152:1;2142:12;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;2123:31;;2169:13;2223;;2198:11;:21;2210:8;2198:21;;;;;;;;;;;;;;;;2186:9;:33;;;;:::i;:::-;2185:51;;;;:::i;:::-;2169:67;;2252:9;2267:8;:13;;2288:5;2267:31;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2251:47;;;2320:4;2312:32;;;;;;;;;;;;:::i;:::-;;;;;;;;;2375:8;2364:27;;;2385:5;2364:27;;;;;;:::i;:::-;;;;;;;;2109:293;;;2104:3;;;;;;;2065:337;;;;1899:509::o:0;501:46::-;;;;;;;;;;;;;;;;;:::o;1460:316::-;1525:1;1513:9;:13;1505:39;;;;;;;;;;;;:::i;:::-;;;;;;;;;1586:1;1559:11;:23;1571:10;1559:23;;;;;;;;;;;;;;;;:28;1555:85;;1603:9;1618:10;1603:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1555:85;1677:9;1650:11;:23;1662:10;1650:23;;;;;;;;;;;;;;;;:36;;;;;;;:::i;:::-;;;;;;;;1713:9;1696:13;;:26;;;;;;;:::i;:::-;;;;;;;;1747:10;1738:31;;;1759:9;1738:31;;;;;;:::i;:::-;;;;;;;;1460:316::o;88:117:21:-;197:1;194;187:12;334:77;371:7;400:5;389:16;;334:77;;;:::o;417:122::-;490:24;508:5;490:24;:::i;:::-;483:5;480:35;470:63;;529:1;526;519:12;470:63;417:122;:::o;545:139::-;591:5;629:6;616:20;607:29;;645:33;672:5;645:33;:::i;:::-;545:139;;;;:::o;690:329::-;749:6;798:2;786:9;777:7;773:23;769:32;766:119;;;804:79;;:::i;:::-;766:119;924:1;949:53;994:7;985:6;974:9;970:22;949:53;:::i;:::-;939:63;;895:117;690:329;;;;:::o;1025:126::-;1062:7;1102:42;1095:5;1091:54;1080:65;;1025:126;;;:::o;1157:96::-;1194:7;1223:24;1241:5;1223:24;:::i;:::-;1212:35;;1157:96;;;:::o;1259:118::-;1346:24;1364:5;1346:24;:::i;:::-;1341:3;1334:37;1259:118;;:::o;1383:222::-;1476:4;1514:2;1503:9;1499:18;1491:26;;1527:71;1595:1;1584:9;1580:17;1571:6;1527:71;:::i;:::-;1383:222;;;;:::o;1611:118::-;1698:24;1716:5;1698:24;:::i;:::-;1693:3;1686:37;1611:118;;:::o;1735:222::-;1828:4;1866:2;1855:9;1851:18;1843:26;;1879:71;1947:1;1936:9;1932:17;1923:6;1879:71;:::i;:::-;1735:222;;;;:::o;1963:122::-;2036:24;2054:5;2036:24;:::i;:::-;2029:5;2026:35;2016:63;;2075:1;2072;2065:12;2016:63;1963:122;:::o;2091:139::-;2137:5;2175:6;2162:20;2153:29;;2191:33;2218:5;2191:33;:::i;:::-;2091:139;;;;:::o;2236:329::-;2295:6;2344:2;2332:9;2323:7;2319:23;2315:32;2312:119;;;2350:79;;:::i;:::-;2312:119;2470:1;2495:53;2540:7;2531:6;2520:9;2516:22;2495:53;:::i;:::-;2485:63;;2441:117;2236:329;;;;:::o;2571:169::-;2655:11;2689:6;2684:3;2677:19;2729:4;2724:3;2720:14;2705:29;;2571:169;;;;:::o;2746:159::-;2886:11;2882:1;2874:6;2870:14;2863:35;2746:159;:::o;2911:365::-;3053:3;3074:66;3138:1;3133:3;3074:66;:::i;:::-;3067:73;;3149:93;3238:3;3149:93;:::i;:::-;3267:2;3262:3;3258:12;3251:19;;2911:365;;;:::o;3282:419::-;3448:4;3486:2;3475:9;3471:18;3463:26;;3535:9;3529:4;3525:20;3521:1;3510:9;3506:17;3499:47;3563:131;3689:4;3563:131;:::i;:::-;3555:139;;3282:419;;;:::o;3707:161::-;3847:13;3843:1;3835:6;3831:14;3824:37;3707:161;:::o;3874:366::-;4016:3;4037:67;4101:2;4096:3;4037:67;:::i;:::-;4030:74;;4113:93;4202:3;4113:93;:::i;:::-;4231:2;4226:3;4222:12;4215:19;;3874:366;;;:::o;4246:419::-;4412:4;4450:2;4439:9;4435:18;4427:26;;4499:9;4493:4;4489:20;4485:1;4474:9;4470:17;4463:47;4527:131;4653:4;4527:131;:::i;:::-;4519:139;;4246:419;;;:::o;4671:162::-;4811:14;4807:1;4799:6;4795:14;4788:38;4671:162;:::o;4839:366::-;4981:3;5002:67;5066:2;5061:3;5002:67;:::i;:::-;4995:74;;5078:93;5167:3;5078:93;:::i;:::-;5196:2;5191:3;5187:12;5180:19;;4839:366;;;:::o;5211:419::-;5377:4;5415:2;5404:9;5400:18;5392:26;;5464:9;5458:4;5454:20;5450:1;5439:9;5435:17;5428:47;5492:131;5618:4;5492:131;:::i;:::-;5484:139;;5211:419;;;:::o;5636:180::-;5684:77;5681:1;5674:88;5781:4;5778:1;5771:15;5805:4;5802:1;5795:15;5822:180;5870:77;5867:1;5860:88;5967:4;5964:1;5957:15;5991:4;5988:1;5981:15;6008:410;6048:7;6071:20;6089:1;6071:20;:::i;:::-;6066:25;;6105:20;6123:1;6105:20;:::i;:::-;6100:25;;6160:1;6157;6153:9;6182:30;6200:11;6182:30;:::i;:::-;6171:41;;6361:1;6352:7;6348:15;6345:1;6342:22;6322:1;6315:9;6295:83;6272:139;;6391:18;;:::i;:::-;6272:139;6056:362;6008:410;;;;:::o;6424:180::-;6472:77;6469:1;6462:88;6569:4;6566:1;6559:15;6593:4;6590:1;6583:15;6610:185;6650:1;6667:20;6685:1;6667:20;:::i;:::-;6662:25;;6701:20;6719:1;6701:20;:::i;:::-;6696:25;;6740:1;6730:35;;6745:18;;:::i;:::-;6730:35;6787:1;6784;6780:9;6775:14;;6610:185;;;;:::o;6801:147::-;6902:11;6939:3;6924:18;;6801:147;;;;:::o;6954:114::-;;:::o;7074:398::-;7233:3;7254:83;7335:1;7330:3;7254:83;:::i;:::-;7247:90;;7346:93;7435:3;7346:93;:::i;:::-;7464:1;7459:3;7455:11;7448:18;;7074:398;;;:::o;7478:379::-;7662:3;7684:147;7827:3;7684:147;:::i;:::-;7677:154;;7848:3;7841:10;;7478:379;;;:::o;7863:165::-;8003:17;7999:1;7991:6;7987:14;7980:41;7863:165;:::o;8034:366::-;8176:3;8197:67;8261:2;8256:3;8197:67;:::i;:::-;8190:74;;8273:93;8362:3;8273:93;:::i;:::-;8391:2;8386:3;8382:12;8375:19;;8034:366;;;:::o;8406:419::-;8572:4;8610:2;8599:9;8595:18;8587:26;;8659:9;8653:4;8649:20;8645:1;8634:9;8630:17;8623:47;8687:131;8813:4;8687:131;:::i;:::-;8679:139;;8406:419;;;:::o;8831:163::-;8971:15;8967:1;8959:6;8955:14;8948:39;8831:163;:::o;9000:366::-;9142:3;9163:67;9227:2;9222:3;9163:67;:::i;:::-;9156:74;;9239:93;9328:3;9239:93;:::i;:::-;9357:2;9352:3;9348:12;9341:19;;9000:366;;;:::o;9372:419::-;9538:4;9576:2;9565:9;9561:18;9553:26;;9625:9;9619:4;9615:20;9611:1;9600:9;9596:17;9589:47;9653:131;9779:4;9653:131;:::i;:::-;9645:139;;9372:419;;;:::o;9797:191::-;9837:3;9856:20;9874:1;9856:20;:::i;:::-;9851:25;;9890:20;9908:1;9890:20;:::i;:::-;9885:25;;9933:1;9930;9926:9;9919:16;;9954:3;9951:1;9948:10;9945:36;;;9961:18;;:::i;:::-;9945:36;9797:191;;;;:::o",
+        "linkReferences": {}
+    },
+    "methodIdentifiers": {
+        "distributeReturns()": "951d48d7",
+        "getContractBalance()": "6f9fb98a",
+        "invest()": "e8b5e51f",
+        "investments(address)": "96b98862",
+        "investors(uint256)": "3feb5f2b",
+        "owner()": "8da5cb5b",
+        "totalInvested()": "5216aeec"
+    },
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"investor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Invested\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"investor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"ReturnPaid\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"distributeReturns\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getContractBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"invest\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"investments\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"investors\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalInvested\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Guillermo Pastor\",\"details\":\"Designed for demonstration and educational purposes\",\"events\":{\"Invested(address,uint256)\":{\"params\":{\"amount\":\"Amount of ETH invested\",\"investor\":\"Address of the investor\"}},\"ReturnPaid(address,uint256)\":{\"params\":{\"amount\":\"Amount of ETH sent\",\"investor\":\"Address receiving the return\"}}},\"kind\":\"dev\",\"methods\":{\"distributeReturns()\":{\"details\":\"Only callable by the contract owner\"},\"getContractBalance()\":{\"returns\":{\"_0\":\"Current contract balance\"}},\"invest()\":{\"details\":\"Adds investor to the list if investing for the first time\"}},\"title\":\"Investment Contract\",\"version\":1},\"userdoc\":{\"events\":{\"Invested(address,uint256)\":{\"notice\":\"Emitted when a user invests ETH\"},\"ReturnPaid(address,uint256)\":{\"notice\":\"Emitted when returns are distributed to an investor\"}},\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Sets the deployer as contract owner\"},\"distributeReturns()\":{\"notice\":\"Distributes ETH returns proportionally to investors\"},\"getContractBalance()\":{\"notice\":\"Returns the ETH balance held by the contract\"},\"invest()\":{\"notice\":\"Allows users to invest ETH into the contract\"},\"investments(address)\":{\"notice\":\"Mapping of investor address to invested amount\"},\"investors(uint256)\":{\"notice\":\"List of investor addresses\"},\"owner()\":{\"notice\":\"Address of the contract owner\"},\"totalInvested()\":{\"notice\":\"Total ETH invested by all investors\"}},\"notice\":\"Allows users to invest ETH and receive proportional returns\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Investment.sol\":\"Investment\"},\"evmVersion\":\"prague\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/Investment.sol\":{\"keccak256\":\"0xfa9c933ccc7d479e08ec59b2b828eb69b57ee4160a6a0d1944af85896ff03f4e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://72f7a699e319b146d4a33da42f8e11cf9f47d6fac5b74a441b1ceebe108684bf\",\"dweb:/ipfs/QmW3m9UUorkLpRfNzja3R9BwbBM4rCogwCvR1fDGVQMF1c\"]}},\"version\":1}",
+    "metadata": {
+        "compiler": {
+            "version": "0.8.30+commit.73712a01"
+        },
+        "language": "Solidity",
+        "output": {
+            "abi": [
+                {
+                    "inputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "constructor"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "investor",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "Invested",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "investor",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "ReturnPaid",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "payable",
+                    "type": "function",
+                    "name": "distributeReturns"
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getContractBalance",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "payable",
+                    "type": "function",
+                    "name": "invest"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "investments",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "investors",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "owner",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "totalInvested",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                }
+            ],
+            "devdoc": {
+                "kind": "dev",
+                "methods": {
+                    "distributeReturns()": {
+                        "details": "Only callable by the contract owner"
+                    },
+                    "getContractBalance()": {
+                        "returns": {
+                            "_0": "Current contract balance"
+                        }
+                    },
+                    "invest()": {
+                        "details": "Adds investor to the list if investing for the first time"
+                    }
+                },
+                "version": 1
+            },
+            "userdoc": {
+                "kind": "user",
+                "methods": {
+                    "constructor": {
+                        "notice": "Sets the deployer as contract owner"
+                    },
+                    "distributeReturns()": {
+                        "notice": "Distributes ETH returns proportionally to investors"
+                    },
+                    "getContractBalance()": {
+                        "notice": "Returns the ETH balance held by the contract"
+                    },
+                    "invest()": {
+                        "notice": "Allows users to invest ETH into the contract"
+                    },
+                    "investments(address)": {
+                        "notice": "Mapping of investor address to invested amount"
+                    },
+                    "investors(uint256)": {
+                        "notice": "List of investor addresses"
+                    },
+                    "owner()": {
+                        "notice": "Address of the contract owner"
+                    },
+                    "totalInvested()": {
+                        "notice": "Total ETH invested by all investors"
+                    }
+                },
+                "version": 1
+            }
+        },
+        "settings": {
+            "remappings": [
+                "forge-std/=lib/forge-std/src/"
+            ],
+            "optimizer": {
+                "enabled": false,
+                "runs": 200
+            },
+            "metadata": {
+                "bytecodeHash": "ipfs"
+            },
+            "compilationTarget": {
+                "src/Investment.sol": "Investment"
+            },
+            "evmVersion": "prague",
+            "libraries": {}
+        },
+        "sources": {
+            "src/Investment.sol": {
+                "keccak256": "0xfa9c933ccc7d479e08ec59b2b828eb69b57ee4160a6a0d1944af85896ff03f4e",
+                "urls": [
+                    "bzz-raw://72f7a699e319b146d4a33da42f8e11cf9f47d6fac5b74a441b1ceebe108684bf",
+                    "dweb:/ipfs/QmW3m9UUorkLpRfNzja3R9BwbBM4rCogwCvR1fDGVQMF1c"
+                ],
+                "license": "MIT"
+            }
+        },
+        "version": 1
+    },
+    "id": 19
+}
