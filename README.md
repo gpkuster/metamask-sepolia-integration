@@ -15,6 +15,7 @@ This project implements a full-stack solution with:
 
 > 🔗 Smart Contract (Sepolia): [0xc5DcBe660f4ba6fAA31eE5131f3EBe791A5C8b02](https://sepolia.etherscan.io/address/0xc5DcBe660f4ba6fAA31eE5131f3EBe791A5C8b02)
 
+> 🔗 Smart Contract (Foundry project): [https://github/gpkuster/investment-contract](https://github.com/gpkuster/investment-contract)
 ---
 
 ## Project Structure
