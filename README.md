@@ -1,10 +1,10 @@
-# 🧾 Tech Test Project
+# Metamask / Sepolia integration project
 
 Full-stack application composed of a **Node.js backend** and a **frontend client**, including **Web3 integration with MetaMask** and interaction with a **smart contract deployed on Sepolia**.
 
 ---
 
-## 🚀 Overview
+## Overview
 
 This project implements a full-stack solution with:
 
@@ -13,11 +13,11 @@ This project implements a full-stack solution with:
 - Integration with **MetaMask** for wallet connection
 - Interaction with a **smart contract on Sepolia testnet**
 
-> 🔗 Smart Contract (Sepolia): _[ADD LINK HERE]_
+> 🔗 Smart Contract (Sepolia): [0xc5DcBe660f4ba6fAA31eE5131f3EBe791A5C8b02](https://sepolia.etherscan.io/address/0xc5DcBe660f4ba6fAA31eE5131f3EBe791A5C8b02)
 
 ---
 
-## 🧱 Project Structure
+## Project Structure
 
 ```
 .
@@ -28,30 +28,28 @@ This project implements a full-stack solution with:
 
 ---
 
-# 🖥️ Frontend
+# Frontend
 
-## 📋 Description
+## Description
 The frontend is responsible for:
 - Rendering the UI
 - Connecting to MetaMask
-- Interacting with the smart contract
+- Interacting with the smart contract (investment of fixed amount from the loged in wallet in Metamask)
 - Communicating with the backend API
 
-## ⚙️ Features
+## Features
 - Wallet connection via **MetaMask**
-- Display of user-related blockchain data
-- Smart contract interaction (read/write)
-- API consumption from backend
+- Smart contract interaction (transact with it)
+- CRUD API
 
-## 🔗 Web3 Integration
+## Web3 Integration
 - Uses `window.ethereum` to connect to MetaMask
 - Handles wallet connection and network selection
 - Sends transactions to the smart contract deployed on Sepolia
 
-## ▶️ Running the Frontend
+## Running the Frontend
 
 ```bash
-cd client
 npm install
 npm start
 ```
@@ -59,28 +57,28 @@ npm start
 The app will be available at:
 http://localhost:3000
 
-## ⚠️ Requirements
-- MetaMask installed in browser
+## Requirements
+- MetaMask installed in browser - handled error if not
 - Connected to **Sepolia testnet**
 
 ---
 
-# 🧩 Backend
+# Backend
 
-## 📋 Description
+## Description
 The backend is a Node.js server that:
 - Exposes API endpoints
 - Handles business logic
 - Manages application data
 - Acts as a bridge between frontend and backend logic (non-blockchain)
 
-## ⚙️ Features
+## Features
 - REST API endpoints
 - Modular structure (routes, controllers, models, middleware)
 - Basic validation and error handling
-- Lightweight data persistence (file-based / in-memory)
+- Lightweight data persistence (in-memory array)
 
-## 🧱 Architecture
+## Architecture
 
 ```
 server/
@@ -93,7 +91,7 @@ server/
 └── server.js
 ```
 
-## ▶️ Running the Backend
+## Running the Backend
 
 ```bash
 cd server
@@ -102,29 +100,28 @@ npm start
 ```
 
 The server will run on:
-http://localhost:PORT
+http://localhost:8080
 
 ---
 
-# 🔗 Smart Contract Integration
+# Smart Contract Integration
 
 The application interacts with a smart contract deployed on the **Sepolia testnet**.
 
-## 📌 Details
+## Details
 - Network: Sepolia
 - Wallet: MetaMask
 - Interaction: Frontend directly communicates with the contract
 
-> 🔗 Contract Address / Explorer: _[ADD LINK HERE]_
+> 🔗 Contract Address / Explorer: [0xc5DcBe660f4ba6fAA31eE5131f3EBe791A5C8b02](https://sepolia.etherscan.io/address/0xc5DcBe660f4ba6fAA31eE5131f3EBe791A5C8b02)
 
-## ⚙️ Capabilities
-- Read data from the contract
+## Capabilities
 - Send transactions via MetaMask
 - Handle basic blockchain interactions
 
 ---
 
-# 🧪 Testing
+# Testing
 
 - Manual testing of frontend flows
 - Manual testing of backend endpoints
@@ -132,17 +129,17 @@ The application interacts with a smart contract deployed on the **Sepolia testne
 
 ---
 
-# ⚖️ Trade-offs
+# Trade-offs
 
 - No authentication/authorization layer
 - No production-grade validation
-- No automated tests (could be added)
+- No automated or unit tests (could be added)
 - Simplified error handling
 - Backend does not verify blockchain state (frontend handles Web3)
 
 ---
 
-# 🚀 Future Improvements
+# Future Improvements
 
 - Add automated testing (unit + integration + e2e)
 - Improve validation (e.g. Zod / Joi)
@@ -154,7 +151,7 @@ The application interacts with a smart contract deployed on the **Sepolia testne
 
 ---
 
-# 📌 Notes
+# Notes
 
 This project was built as part of a **technical assessment**, prioritizing:
 - Code clarity
@@ -163,6 +160,6 @@ This project was built as part of a **technical assessment**, prioritizing:
 
 ---
 
-# 👨‍💻 Author
+# Author
 
-Guillermo Pastor
+Guillermo Pastor 
